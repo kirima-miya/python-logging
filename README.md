@@ -2,6 +2,9 @@
 
 `main.py`を実行すると、以下のログが出力される。
 
+※ コンソールではロギングレベルに色がつく。。。はず<br>
+（`logger_conf.yaml`の`console_color`設定を参照）
+
 ```
 ex. 時間 ロギングレベル(ロガー名): メッセージ
 18:45:35 DEBUG(__main__): debug msg
