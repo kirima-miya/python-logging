@@ -1,0 +1,39 @@
+version: 1
+
+# ロギングレベル
+# https://docs.python.org/ja/3/howto/logging.html#logging-levels
+levels:
+  DEBUG: 10
+  INFO: 20
+  WARNING: 30
+  ERROR: 40
+  CRITICAL: 50
+
+# 出力形式
+# https://docs.python.org/ja/3.8/library/logging.html#logrecord-attributes
+formatters:
+  simple:
+    format: "%(asctime)s %(levelname)s(%(name)s): %(message)s"
+    datefmt: "%H:%M:%S"
+  console_color:
+    format: "%(asctime)s \e[33m%(levelname)s\e[m(%(name)s): %(message)s"
+    datefmt: "%H:%M:%S"
+
+# 出力先
+# https://docs.python.org/ja/3/library/logging.handlers.html#module-logging.handlers
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: console_color
+    stream: ext://sys.stdout
+
+# 各ファイルのロガー
+root:
+  level: DEBUG
+  handlers: [console]
+loggers:
+  my_module.mod:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
