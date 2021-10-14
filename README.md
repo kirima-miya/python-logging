@@ -60,3 +60,7 @@ loggers:
     handlers: [console]
     propagate: no
 ```
+
+# 参考文献
+
+[Logging HOWTO - Python公式ドキュメント](https://docs.python.org/ja/3/howto/logging.html)
